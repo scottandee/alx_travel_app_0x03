@@ -1,0 +1,403 @@
+[
+  {
+    "model": "listings.user",
+    "pk": "11111111-1111-1111-1111-111111111111",
+    "fields": {
+      "username": "guest1",
+      "first_name": "John",
+      "last_name": "Doe",
+      "email": "john.doe@example.com",
+      "password_hash": "hashedpassword123",
+      "phone_number": "08012345678",
+      "role": "guest",
+      "created_at": "2025-01-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "listings.user",
+    "pk": "22222222-2222-2222-2222-222222222222",
+    "fields": {
+      "username": "host1",
+      "first_name": "Alice",
+      "last_name": "Smith",
+      "email": "alice.smith@example.com",
+      "password_hash": "hashedpassword456",
+      "phone_number": "08098765432",
+      "role": "host",
+      "created_at": "2025-01-02T10:00:00Z"
+    }
+  },
+
+  {
+    "model": "listings.listing",
+    "pk": "33333333-3333-3333-3333-333333333331",
+    "fields": {
+      "host_id": "22222222-2222-2222-2222-222222222222",
+      "name": "Cozy Apartment 1",
+      "description": "A nice and cozy apartment in the city center.",
+      "location": "Lagos",
+      "price_per_night": "150.00",
+      "created_at": "2025-01-03T12:00:00Z",
+      "updated_at": "2025-01-03T12:00:00Z"
+    }
+  },
+  {
+    "model": "listings.listing",
+    "pk": "33333333-3333-3333-3333-333333333332",
+    "fields": {
+      "host_id": "22222222-2222-2222-2222-222222222222",
+      "name": "Cozy Apartment 2",
+      "description": "Spacious and modern apartment with sea view.",
+      "location": "Abuja",
+      "price_per_night": "200.00",
+      "created_at": "2025-01-04T12:00:00Z",
+      "updated_at": "2025-01-04T12:00:00Z"
+    }
+  },
+  {
+    "model": "listings.listing",
+    "pk": "33333333-3333-3333-3333-333333333333",
+    "fields": {
+      "host_id": "22222222-2222-2222-2222-222222222222",
+      "name": "Cozy Apartment 3",
+      "description": "Quiet suburban home with garden.",
+      "location": "Ibadan",
+      "price_per_night": "120.00",
+      "created_at": "2025-01-05T12:00:00Z",
+      "updated_at": "2025-01-05T12:00:00Z"
+    }
+  },
+  {
+    "model": "listings.listing",
+    "pk": "33333333-3333-3333-3333-333333333334",
+    "fields": {
+      "host_id": "22222222-2222-2222-2222-222222222222",
+      "name": "Cozy Apartment 4",
+      "description": "Downtown studio perfect for business travelers.",
+      "location": "Lagos",
+      "price_per_night": "180.00",
+      "created_at": "2025-01-06T12:00:00Z",
+      "updated_at": "2025-01-06T12:00:00Z"
+    }
+  },
+  {
+    "model": "listings.listing",
+    "pk": "33333333-3333-3333-3333-333333333335",
+    "fields": {
+      "host_id": "22222222-2222-2222-2222-222222222222",
+      "name": "Cozy Apartment 5",
+      "description": "Modern loft with rooftop access.",
+      "location": "Port Harcourt",
+      "price_per_night": "220.00",
+      "created_at": "2025-01-07T12:00:00Z",
+      "updated_at": "2025-01-07T12:00:00Z"
+    }
+  },
+  {
+    "model": "listings.listing",
+    "pk": "33333333-3333-3333-3333-333333333336",
+    "fields": {
+      "host_id": "22222222-2222-2222-2222-222222222222",
+      "name": "Cozy Apartment 6",
+      "description": "Lakefront cabin with private dock.",
+      "location": "Enugu",
+      "price_per_night": "300.00",
+      "created_at": "2025-01-08T12:00:00Z",
+      "updated_at": "2025-01-08T12:00:00Z"
+    }
+  },
+  {
+    "model": "listings.listing",
+    "pk": "33333333-3333-3333-3333-333333333337",
+    "fields": {
+      "host_id": "22222222-2222-2222-2222-222222222222",
+      "name": "Cozy Apartment 7",
+      "description": "Luxury penthouse with panoramic view.",
+      "location": "Lagos",
+      "price_per_night": "500.00",
+      "created_at": "2025-01-09T12:00:00Z",
+      "updated_at": "2025-01-09T12:00:00Z"
+    }
+  },
+  {
+    "model": "listings.listing",
+    "pk": "33333333-3333-3333-3333-333333333338",
+    "fields": {
+      "host_id": "22222222-2222-2222-2222-222222222222",
+      "name": "Cozy Apartment 8",
+      "description": "Affordable shared room near university.",
+      "location": "Benin City",
+      "price_per_night": "80.00",
+      "created_at": "2025-01-10T12:00:00Z",
+      "updated_at": "2025-01-10T12:00:00Z"
+    }
+  },
+  {
+    "model": "listings.listing",
+    "pk": "33333333-3333-3333-3333-333333333339",
+    "fields": {
+      "host_id": "22222222-2222-2222-2222-222222222222",
+      "name": "Cozy Apartment 9",
+      "description": "Family-friendly house with backyard.",
+      "location": "Jos",
+      "price_per_night": "170.00",
+      "created_at": "2025-01-11T12:00:00Z",
+      "updated_at": "2025-01-11T12:00:00Z"
+    }
+  },
+  {
+    "model": "listings.listing",
+    "pk": "33333333-3333-3333-3333-333333333340",
+    "fields": {
+      "host_id": "22222222-2222-2222-2222-222222222222",
+      "name": "Cozy Apartment 10",
+      "description": "Beach house with private access.",
+      "location": "Calabar",
+      "price_per_night": "400.00",
+      "created_at": "2025-01-12T12:00:00Z",
+      "updated_at": "2025-01-12T12:00:00Z"
+    }
+  },
+
+  {
+    "model": "listings.booking",
+    "pk": "44444444-4444-4444-4444-444444444441",
+    "fields": {
+      "listing_id": "33333333-3333-3333-3333-333333333331",
+      "user_id": "11111111-1111-1111-1111-111111111111",
+      "start_date": "2025-02-01",
+      "end_date": "2025-02-05",
+      "total_price": "600.00",
+      "status": "confirmed",
+      "created_at": "2025-01-05T14:00:00Z"
+    }
+  },
+  {
+    "model": "listings.booking",
+    "pk": "44444444-4444-4444-4444-444444444442",
+    "fields": {
+      "listing_id": "33333333-3333-3333-3333-333333333332",
+      "user_id": "11111111-1111-1111-1111-111111111111",
+      "start_date": "2025-02-10",
+      "end_date": "2025-02-12",
+      "total_price": "400.00",
+      "status": "confirmed",
+      "created_at": "2025-01-06T14:00:00Z"
+    }
+  },
+  {
+    "model": "listings.booking",
+    "pk": "44444444-4444-4444-4444-444444444443",
+    "fields": {
+      "listing_id": "33333333-3333-3333-3333-333333333333",
+      "user_id": "11111111-1111-1111-1111-111111111111",
+      "start_date": "2025-02-15",
+      "end_date": "2025-02-18",
+      "total_price": "360.00",
+      "status": "pending",
+      "created_at": "2025-01-07T14:00:00Z"
+    }
+  },
+  {
+    "model": "listings.booking",
+    "pk": "44444444-4444-4444-4444-444444444444",
+    "fields": {
+      "listing_id": "33333333-3333-3333-3333-333333333334",
+      "user_id": "11111111-1111-1111-1111-111111111111",
+      "start_date": "2025-02-20",
+      "end_date": "2025-02-22",
+      "total_price": "360.00",
+      "status": "cancelled",
+      "created_at": "2025-01-08T14:00:00Z"
+    }
+  },
+  {
+    "model": "listings.booking",
+    "pk": "44444444-4444-4444-4444-444444444445",
+    "fields": {
+      "listing_id": "33333333-3333-3333-3333-333333333335",
+      "user_id": "11111111-1111-1111-1111-111111111111",
+      "start_date": "2025-03-01",
+      "end_date": "2025-03-05",
+      "total_price": "880.00",
+      "status": "confirmed",
+      "created_at": "2025-01-09T14:00:00Z"
+    }
+  },
+  {
+    "model": "listings.booking",
+    "pk": "44444444-4444-4444-4444-444444444446",
+    "fields": {
+      "listing_id": "33333333-3333-3333-3333-333333333336",
+      "user_id": "11111111-1111-1111-1111-111111111111",
+      "start_date": "2025-03-10",
+      "end_date": "2025-03-15",
+      "total_price": "1500.00",
+      "status": "confirmed",
+      "created_at": "2025-01-10T14:00:00Z"
+    }
+  },
+  {
+    "model": "listings.booking",
+    "pk": "44444444-4444-4444-4444-444444444447",
+    "fields": {
+      "listing_id": "33333333-3333-3333-3333-333333333337",
+      "user_id": "11111111-1111-1111-1111-111111111111",
+      "start_date": "2025-03-20",
+      "end_date": "2025-03-25",
+      "total_price": "2500.00",
+      "status": "confirmed",
+      "created_at": "2025-01-11T14:00:00Z"
+    }
+  },
+  {
+    "model": "listings.booking",
+    "pk": "44444444-4444-4444-4444-444444444448",
+    "fields": {
+      "listing_id": "33333333-3333-3333-3333-333333333338",
+      "user_id": "11111111-1111-1111-1111-111111111111",
+      "start_date": "2025-04-01",
+      "end_date": "2025-04-03",
+      "total_price": "160.00",
+      "status": "confirmed",
+      "created_at": "2025-01-12T14:00:00Z"
+    }
+  },
+  {
+    "model": "listings.booking",
+    "pk": "44444444-4444-4444-4444-444444444449",
+    "fields": {
+      "listing_id": "33333333-3333-3333-3333-333333333339",
+      "user_id": "11111111-1111-1111-1111-111111111111",
+      "start_date": "2025-04-10",
+      "end_date": "2025-04-15",
+      "total_price": "850.00",
+      "status": "confirmed",
+      "created_at": "2025-01-13T14:00:00Z"
+    }
+  },
+  {
+    "model": "listings.booking",
+    "pk": "44444444-4444-4444-4444-444444444450",
+    "fields": {
+      "listing_id": "33333333-3333-3333-3333-333333333340",
+      "user_id": "11111111-1111-1111-1111-111111111111",
+      "start_date": "2025-04-20",
+      "end_date": "2025-04-25",
+      "total_price": "2000.00",
+      "status": "confirmed",
+      "created_at": "2025-01-14T14:00:00Z"
+    }
+  },
+
+  {
+    "model": "listings.review",
+    "pk": "55555555-5555-5555-5555-555555555551",
+    "fields": {
+      "listing_id": "33333333-3333-3333-3333-333333333331",
+      "user_id": "11111111-1111-1111-1111-111111111111",
+      "rating": 5,
+      "comment": "Great place! Very clean and well-located.",
+      "created_at": "2025-01-06T09:00:00Z"
+    }
+  },
+  {
+    "model": "listings.review",
+    "pk": "55555555-5555-5555-5555-555555555552",
+    "fields": {
+      "listing_id": "33333333-3333-3333-3333-333333333332",
+      "user_id": "11111111-1111-1111-1111-111111111111",
+      "rating": 4,
+      "comment": "Nice view, but could be cleaner.",
+      "created_at": "2025-01-07T09:00:00Z"
+    }
+  },
+  {
+    "model": "listings.review",
+    "pk": "55555555-5555-5555-5555-555555555553",
+    "fields": {
+      "listing_id": "33333333-3333-3333-3333-333333333333",
+      "user_id": "11111111-1111-1111-1111-111111111111",
+      "rating": 5,
+      "comment": "Loved the garden, very peaceful stay.",
+      "created_at": "2025-01-08T09:00:00Z"
+    }
+  },
+  {
+    "model": "listings.review",
+    "pk": "55555555-5555-5555-5555-555555555554",
+    "fields": {
+      "listing_id": "33333333-3333-3333-3333-333333333334",
+      "user_id": "11111111-1111-1111-1111-111111111111",
+      "rating": 3,
+      "comment": "Good location, but noisy at night.",
+      "created_at": "2025-01-09T09:00:00Z"
+    }
+  },
+  {
+    "model": "listings.review",
+    "pk": "55555555-5555-5555-5555-555555555555",
+    "fields": {
+      "listing_id": "33333333-3333-3333-3333-333333333335",
+      "user_id": "11111111-1111-1111-1111-111111111111",
+      "rating": 4,
+      "comment": "Stylish loft, really enjoyed the rooftop.",
+      "created_at": "2025-01-10T09:00:00Z"
+    }
+  },
+  {
+    "model": "listings.review",
+    "pk": "55555555-5555-5555-5555-555555555556",
+    "fields": {
+      "listing_id": "33333333-3333-3333-3333-333333333336",
+      "user_id": "11111111-1111-1111-1111-111111111111",
+      "rating": 5,
+      "comment": "Amazing lakefront view, would book again.",
+      "created_at": "2025-01-11T09:00:00Z"
+    }
+  },
+  {
+    "model": "listings.review",
+    "pk": "55555555-5555-5555-5555-555555555557",
+    "fields": {
+      "listing_id": "33333333-3333-3333-3333-333333333337",
+      "user_id": "11111111-1111-1111-1111-111111111111",
+      "rating": 5,
+      "comment": "Penthouse was luxurious and comfortable.",
+      "created_at": "2025-01-12T09:00:00Z"
+    }
+  },
+  {
+    "model": "listings.review",
+    "pk": "55555555-5555-5555-5555-555555555558",
+    "fields": {
+      "listing_id": "33333333-3333-3333-3333-333333333338",
+      "user_id": "11111111-1111-1111-1111-111111111111",
+      "rating": 4,
+      "comment": "Affordable stay, but basic amenities.",
+      "created_at": "2025-01-13T09:00:00Z"
+    }
+  },
+  {
+    "model": "listings.review",
+    "pk": "55555555-5555-5555-5555-555555555559",
+    "fields": {
+      "listing_id": "33333333-3333-3333-3333-333333333339",
+      "user_id": "11111111-1111-1111-1111-111111111111",
+      "rating": 5,
+      "comment": "Perfect for families, kids loved the backyard.",
+      "created_at": "2025-01-14T09:00:00Z"
+    }
+  },
+  {
+    "model": "listings.review",
+    "pk": "55555555-5555-5555-5555-555555555560",
+    "fields": {
+      "listing_id": "33333333-3333-3333-3333-333333333340",
+      "user_id": "11111111-1111-1111-1111-111111111111",
+      "rating": 5,
+      "comment": "Fantastic beach house, private and relaxing.",
+      "created_at": "2025-01-15T09:00:00Z"
+    }
+  }
+]
