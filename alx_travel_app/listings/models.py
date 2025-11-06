@@ -36,6 +36,9 @@ class Listing(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return f"{self.title} - ${self.price} ({self.location})"
+
 
 class BookingStatus(models.TextChoices):
     PENDING = 'pending'
@@ -71,6 +74,9 @@ class Booking(models.Model):
             self.total_price = self.listing.price_per_night * days
         return super().save(*args, **kwargs)
 
+    def __str__(self):
+        return f"{self.booking_id} - ${self.total_price} ({self.status})"
+
 
 class Review(models.Model):
     review_id = models.UUIDField(
@@ -90,4 +96,26 @@ class Review(models.Model):
             MinValueValidator(1),
             MaxValueValidator(5)])
     comment = models.TextField(max_length=250)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+
+class Payment(models.Model):
+    class PaymentStatus(models.TextChoices):
+        PENDING = 'pending'
+        SUCCESS = 'success'
+        FAILED = 'failed'
+    payment_id = models.UUIDField(
+        primary_key=True,
+        default=uuid.uuid4,
+        editable=False)
+    tx_ref = models.UUIDField(unique=True)
+    booking = models.ForeignKey(
+        Booking,
+        related_name='payments',
+        on_delete=models.CASCADE)
+    amount = models.DecimalField(decimal_places=2, max_digits=10)
+    status = models.CharField(
+        max_length=10,
+        choices=PaymentStatus.choices,
+        default=PaymentStatus.PENDING)
     created_at = models.DateTimeField(auto_now_add=True)
