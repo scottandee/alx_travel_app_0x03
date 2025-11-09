@@ -5,8 +5,9 @@ from rest_framework.response import Response
 from .serializers import UserSerializer, BookingSerializer, ListingSerializer, PaymentSerializer
 from .models import User, Booking, Listing, Review, Payment
 from .permissions import IsGuestForBooking, IsHostForListing
+from .tasks import send_booking_confirmation
 import requests
-import json
+
 import uuid
 import alx_travel_app.settings as settings
 
@@ -100,7 +101,6 @@ def initiate_payment(request, format=None):
     try:
         response = requests.post(url, json=payload, headers=headers)
         response_data = response.json()
-        print(response_data)
     except requests.RequestException as exc:
         return Response({"error": "payment provider unreachable"},
                         status=status.HTTP_503_SERVICE_UNAVAILABLE)
@@ -120,7 +120,10 @@ def initiate_payment(request, format=None):
     })
     if serializer.is_valid():
         serializer.save()
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
+        response = {
+            **serializer.data,
+            "checkout_url": response_data['data']['checkout_url']}
+        return Response(response, status=status.HTTP_201_CREATED)
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
@@ -133,6 +136,10 @@ def verify_payment(request, tx_ref, format=None):
         payment = Payment.objects.get(tx_ref=tx_ref)
     except Payment.DoesNotExist as e:
         return Response(e.errors, status=status.HTTP_404_NOT_FOUND)
+
+    if payment.status == 'success':
+        serializer = PaymentSerializer(payment)
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
     # Declare parameters for API call
     url = f"https://api.chapa.co/v1/transaction/verify/{tx_ref}"
@@ -155,11 +162,17 @@ def verify_payment(request, tx_ref, format=None):
         return Response(response_data, status=status.HTTP_400_BAD_REQUEST)
 
     # Update payment status
-    if response_data['data']["status"] == 'success':
+    if response_data['data']["status"] == Payment.PaymentStatus.SUCCESS:
         payment.status = Payment.PaymentStatus.SUCCESS
         payment.save()
-    elif response_data['data']["status"] == 'failed/cancelled':
+
+        # send booking confirmation if successful
+        logged_in_user = request.user
+        send_booking_confirmation.delay(
+            logged_in_user.email, payment.payment_id)
+    elif response_data['data']["status"] == "failed/cancelled":
         payment.status = Payment.PaymentStatus.FAILED
         payment.save()
+
     serializer = PaymentSerializer(payment)
     return Response(serializer.data, status=status.HTTP_200_OK)
