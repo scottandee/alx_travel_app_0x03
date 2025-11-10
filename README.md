@@ -1,4 +1,4 @@
-# ALX Travel App – ProDev Backend (Milestone 4)
+# ALX Travel App – ProDev Backend (Milestone 5)
 ### Project Overview
 This repository contains the initial setup for the **ALX Travel App**, a real-world Django application that serves as the foundation for a travel listing platform. Milestone 5 focuses on enhancing the alx_travel_app project by implementing asynchronous background processing using `Celery` with `RabbitMQ` as the message broker. The main feature added is an email notification system that sends booking confirmations after payment verification without blocking the main request-response cycle. This ensures improved performance and a better user experience.
 
